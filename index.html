@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST-lightRail-Map</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <div id="timedisplay"></div>
+    </div>
+    <div class="content">
+        <div class="top-display">
+            <h2 class="center-text"> NorthBound</h2>
+            <div class="north">
+                <div class="station">
+                    <div class="station-name"> Angle Lake</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> SeaTac/Airport</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Tukwila Int'l Blvd</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Rainier Beach</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Othello</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Columbia City</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Mount Baker</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Seatac</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Beacon Hill</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> SODO</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Int'l Dist/Chinatown</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Pioneer Square</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Symphony</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Westlake</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Capitol Hill</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Univ of Washington</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">U District</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Roosevelt</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Northgate</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Shoreline South/148th</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Shoreline North/185th</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Mountlake Terrace</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Lynnwood City Center</div>
+                    <div class="train-status"></div>
+                </div>
+                
+            </div>
+            <h2 class="center-text"> SouthBound</h2>
+            <div class="south">
+                <div class="station">
+                    <div class="station-name"> Angle Lake</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> SeaTac/Airport</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Tukwila Int'l Blvd</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Rainier Beach</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Othello</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Columbia City</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Mount Baker</div>
+                    <div class="train-status"> </div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Seatac</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> Beacon Hill</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"> SODO</div>
+                    <div class="train-status"> NoTrain</div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Int'l Dist/Chinatown</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Pioneer Square</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Symphony</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Westlake</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Capitol Hill</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Univ of Washington</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">U District</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Roosevelt</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Northgate</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Shoreline South/148th</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Shoreline North/185th</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Mountlake Terrace</div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name"></div>
+                    <div class="train-status"></div>
+                </div>
+                <div class="station">
+                    <div class="station-name">Lynnwood City Center</div>
+                    <div class="train-status"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-display">
+            <div class="inbound-north">
+                <h2>Inbound northbounrd Train</h2>
+                <h3>0:07:39</h3>
+            </div>
+            <div class="inbound-north">
+                <h2>Inbound Southbounrd Train</h2>
+                <h3>0:07:39</h3>
+            </div>
+            <div class="Alerts-card">
+                <h3>Shoreline North/185th Station will have scheduled maintenance beginning Monday, Dec 9 through early January. The work will take place from 7 a.m. to 3 p.m. daily, detours and traffic control will be available for passenger access.</h3>
+                <h3>Entrance Closure at Mount Baker Station. The South entrance is not available due to a mechanical issue.</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateTime() {
+          let now = new Date();
+          let formattedTime = now.toLocaleTimeString(); 
+          document.getElementById("timedisplay").textContent = Date();
+        }
+        setInterval(updateTime, 1000); // Update every second
+      </script>
+    
+</body>
+</html>

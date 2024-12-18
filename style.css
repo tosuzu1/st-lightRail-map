@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    padding : 8px 8px;
+}
+
+.north,.south{
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.station-name {
+    transform: rotate(300deg); /* Rotates the text 45 degrees */
+    transform-origin: top; /* Keeps the rotation centered */
+    display: inline-block; /* Allows rotation */
+    width: 20px;
+    white-space: nowrap;
+  }
+  
+  .train-status {
+    border: 5px solid red;
+    height: 30px;
+    width: 30px;
+    background: blue;
+  }
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-display {
+    flex: 1 0 auto;
+}
+
+.bottom-display {
+    flex: 1 1 auto;
+
+    display: flex;
+}
+
+.center-text {
+    text-align: center;
+}
