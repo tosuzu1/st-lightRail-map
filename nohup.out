@@ -1,0 +1,88 @@
+
+> st-lightrail-map@1.0.0 start
+> node app.js
+
+running
+Server Listening on PORT: 1234
+Starting Chromium...
+[30837:30837:0217/133400.368426:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[30837:30837:0217/133400.825072:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+
+> st-lightrail-map@1.0.0 start
+> node app.js
+
+running
+Server Listening on PORT: 1234
+Starting Chromium...
+[30967:30967:0217/133448.553368:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[30967:30967:0217/133449.018764:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[30967:31024:0217/133449.946196:ERROR:v4l2_utils.cc(584)] Could not open /dev/video10: Permission denied (13)
+[30967:31024:0217/133450.069585:ERROR:v4l2_utils.cc(584)] Could not open /dev/video10: Permission denied (13)
+close object 1: Invalid argument
+close object 2: Invalid argument
+close object 3: Invalid argument
+close object 3: Invalid argument
+close object 4: Invalid argument
+close object 5: Invalid argument
+[30912:30912:0217/133531.331750:ERROR:zygote_communication_linux.cc(297)] Failed to send GetTerminationStatus message to zygote
+[30912:30912:0217/133531.439622:ERROR:zygote_communication_linux.cc(297)] Failed to send GetTerminationStatus message to zygote
+[30912:30912:0217/133531.463814:ERROR:zygote_communication_linux.cc(297)] Failed to send GetTerminationStatus message to zygote
+[30912:30912:0217/133531.630558:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.677006:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.690926:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.702776:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.713448:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.724152:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.735644:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.746506:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.756942:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[30912:30912:0217/133531.757267:FATAL:gpu_data_manager_impl_private.cc(423)] GPU process isn't usable. Goodbye.
+[0217/133531.782865:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+[0217/133531.838656:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+./kiosk.sh: line 11: 30887 Hangup                  npm start
+./kiosk.sh: line 11: 30912 Aborted                 /usr/bin/chromium-browser $KIOSK_URL --noerrdialogs --disable-infobars --kiosk --no-first-run --ozone-platform=wayland --enable-features=OverlayScrollbar --start-maximized
+
+> st-lightrail-map@1.0.0 start
+> node app.js
+
+running
+Server Listening on PORT: 1234
+Error fetching data: Error: HTTP error! status: 429
+    at fetchData (/home/felix/Desktop/st-lightRail-map/app.js:217:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[32086:32086:0217/134834.905612:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[32086:32086:0217/134835.358594:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[32086:32140:0217/134836.270323:ERROR:v4l2_utils.cc(584)] Could not open /dev/video10: Permission denied (13)
+[32086:32140:0217/134836.369601:ERROR:v4l2_utils.cc(584)] Could not open /dev/video10: Permission denied (13)
+close object 1: Invalid argument
+close object 2: Invalid argument
+close object 3: Invalid argument
+close object 3: Invalid argument
+close object 4: Invalid argument
+close object 5: Invalid argument
+HTTP error! status: 429
+[32218:32218:0217/135027.564246:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[32218:32218:0217/135028.042412:ERROR:gl_display.cc(497)] EGL Driver message (Error) eglCreateContext: Requested version is not supported
+[32218:32277:0217/135028.760487:ERROR:v4l2_utils.cc(584)] Could not open /dev/video10: Permission denied (13)
+[32218:32277:0217/135028.912154:ERROR:v4l2_utils.cc(584)] Could not open /dev/video10: Permission denied (13)
+close object 1: Invalid argument
+close object 2: Invalid argument
+close object 3: Invalid argument
+close object 1: Invalid argument
+close object 2: Invalid argument
+close object 4: Invalid argument
+[32162:32162:0217/135045.081272:ERROR:zygote_communication_linux.cc(297)] Failed to send GetTerminationStatus message to zygote
+[32162:32162:0217/135045.229429:ERROR:zygote_communication_linux.cc(297)] Failed to send GetTerminationStatus message to zygote
+[32162:32162:0217/135045.237969:ERROR:zygote_communication_linux.cc(297)] Failed to send GetTerminationStatus message to zygote
+[32162:32162:0217/135045.482527:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.504395:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.517965:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.530448:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.544960:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.559292:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.573030:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.584680:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.595921:ERROR:gpu_process_host.cc(976)] GPU process launch failed: error_code=1002
+[32162:32162:0217/135045.596189:FATAL:gpu_data_manager_impl_private.cc(423)] GPU process isn't usable. Goodbye.
+[0217/135045.622664:ERROR:elf_dynamic_array_reader.h(64)] tag not found
+[0217/135045.679720:ERROR:elf_dynamic_array_reader.h(64)] tag not found
