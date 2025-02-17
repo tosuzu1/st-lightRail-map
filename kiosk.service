@@ -1,0 +1,10 @@
+[Unit]
+Description=kiosk-service
+Wants=graphical.target
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/felix/Desktop/st-lightRail-map/kiosk.sh
+Restart=on-abort
+User=root

@@ -13,4 +13,4 @@ Once you obtain a api key you then need to make a .env file in root and fill it 
 4. open browser to "localhost:1234"
 
 # example
-[image]
+![alt text](./screenShot/example.png)
