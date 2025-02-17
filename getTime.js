@@ -5,3 +5,4 @@ function updateTime() {
 }
 
 setInterval(updateTime, 1000); // Update every second
+

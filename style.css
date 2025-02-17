@@ -46,3 +46,7 @@
 .center-text {
     text-align: center;
 }
+
+.train-present {
+    background-color: green;
+}

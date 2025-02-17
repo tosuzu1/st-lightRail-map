@@ -1,0 +1,24 @@
+{
+  "name": "st-lightrail-map",
+  "version": "1.0.0",
+  "description": "stLight map API",
+  "main": "getLocalJson.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tosuzu1/st-lightRail-map.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tosuzu1/st-lightRail-map/issues"
+  },
+  "homepage": "https://github.com/tosuzu1/st-lightRail-map#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

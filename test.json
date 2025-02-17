@@ -1,0 +1,119 @@
+[
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_1120",
+        "direction": "1",
+        "next_stop": "Columbia City",
+        "time_until": 135.09699988365173,
+        "nextStopTimeOffset": 165,
+        "staleness": 29.903000116348267,
+        "lastUpdateTime": "Sun Feb 16 2025 20:39:02 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_1124",
+        "direction": "1",
+        "next_stop": "Angle Lake",
+        "time_until": 538.0969998836517,
+        "nextStopTimeOffset": 599,
+        "staleness": 60.90300011634827,
+        "lastUpdateTime": "Sun Feb 16 2025 20:38:31 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_1122",
+        "direction": "1",
+        "next_stop": "SeaTac/Airport",
+        "time_until": 0,
+        "nextStopTimeOffset": 117,
+        "staleness": 282.90300011634827,
+        "lastUpdateTime": "Sun Feb 16 2025 20:34:49 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2127",
+        "direction": "0",
+        "next_stop": "SODO",
+        "time_until": 118.09699988365173,
+        "nextStopTimeOffset": 186,
+        "staleness": 67.90300011634827,
+        "lastUpdateTime": "Sun Feb 16 2025 20:38:24 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2124",
+        "direction": "0",
+        "next_stop": "Shoreline North/185th",
+        "time_until": 0,
+        "nextStopTimeOffset": 0,
+        "staleness": 25.903000116348267,
+        "lastUpdateTime": "Sun Feb 16 2025 20:39:06 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2126",
+        "direction": "0",
+        "next_stop": "Mountlake Terrace",
+        "time_until": 0,
+        "nextStopTimeOffset": 58,
+        "staleness": 1739767171.903,
+        "lastUpdateTime": "Wed Dec 31 1969 16:00:00 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2122",
+        "direction": "0",
+        "next_stop": "Roosevelt",
+        "time_until": 58.09699988365173,
+        "nextStopTimeOffset": 77,
+        "staleness": 18.903000116348267,
+        "lastUpdateTime": "Sun Feb 16 2025 20:39:13 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_1119",
+        "direction": "1",
+        "next_stop": "Lynnwood City Center",
+        "time_until": 0,
+        "nextStopTimeOffset": 0,
+        "staleness": 1739767171.903,
+        "lastUpdateTime": "Wed Dec 31 1969 16:00:00 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_1121",
+        "direction": "1",
+        "next_stop": "Shoreline South/148th",
+        "time_until": 101.09699988365173,
+        "nextStopTimeOffset": 123,
+        "staleness": 21.903000116348267,
+        "lastUpdateTime": "Sun Feb 16 2025 20:39:10 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_1123",
+        "direction": "1",
+        "next_stop": "Capitol Hill",
+        "time_until": 0,
+        "nextStopTimeOffset": 58,
+        "staleness": 1739767171.903,
+        "lastUpdateTime": "Wed Dec 31 1969 16:00:00 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2118",
+        "direction": "0",
+        "next_stop": "Univ of Washington",
+        "time_until": 0,
+        "nextStopTimeOffset": 0,
+        "staleness": 30.903000116348267,
+        "lastUpdateTime": "Sun Feb 16 2025 20:39:01 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2123",
+        "direction": "0",
+        "next_stop": "Tukwila Int'l Blvd",
+        "time_until": 17.096999883651733,
+        "nextStopTimeOffset": 42,
+        "staleness": 24.903000116348267,
+        "lastUpdateTime": "Sun Feb 16 2025 20:39:07 GMT-0800 (Pacific Standard Time)"
+    },
+    {
+        "id": "40_LLR_2025-02-16_Feb6_Combined_Feb2025_dstt_sunday_100479_2125",
+        "direction": "0",
+        "next_stop": "Rainier Beach",
+        "time_until": 26.096999883651733,
+        "nextStopTimeOffset": 85,
+        "staleness": 58.90300011634827,
+        "lastUpdateTime": "Sun Feb 16 2025 20:38:33 GMT-0800 (Pacific Standard Time)"
+    }
+]
