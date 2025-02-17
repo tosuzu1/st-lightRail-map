@@ -20,11 +20,11 @@ let trainData, northStationData, southStationData
 
 // direction = 0 then its south, otherwise 1 = north
 function updateTag(data) {
-    const allNstation = document.querySelectorAll("#north_station .train-status");
-    allNstation.forEach(ele => ele.classList.remove("train-present"));
+    const allstation = document.querySelectorAll(".train-status");
+    allstation.forEach(ele => ele.classList.remove("train-present"));
     //classList.remove("train-present"); 
-    const allSstation = document.querySelectorAll("#south_station .train-status");
-    allSstation.forEach(ele => ele.classList.remove("train-present"));
+    // const allSstation = document.querySelectorAll("#south_station .train-status");
+    // allSstation.forEach(ele => ele.classList.remove("train-present"));
 
     data.forEach(element => {
         if (element.direction === '1') {

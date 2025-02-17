@@ -118,7 +118,12 @@ class Train {
         jsonObj =jsonObj.filter(e => e != undefined);
         let arrivalTime = []
         console.log(jsonObj.map(ele => ele.arrivalTime + serTime));
-        jsonObj.map(ele => ele.arrivalTime + serTime).forEach(e => console.log(new Date(e).toString()))
+        jsonObj.map(ele => ele.arrivalTime + serTime).forEach(e => {
+            let newTime = new Date(e);
+            
+            console.log((newTime - now).toString());
+            console.log(`${newTime.getHours()}:${newTime.getMinutes()}`);
+        })
         //console.log(jsonObj)
     }
 
@@ -137,16 +142,24 @@ class Train {
     }
 
     get_situations(json) {
+        let return_array = []
         json.data.references.situations.forEach(ele => {
-            //console.log(ele.description.value);
-            if (!("description" in ele)) {
-                console.log(ele.activeWindows);
-                console.log(ele.summary.value);
-            } else {
-                console.log(ele.activeWindows);
-                console.log(ele.description.value);
+            let tempObj = {
+                activeWindow : "",
+                description : ""
             }
+            //console.log(ele.description.value);
+            tempObj.activeWindow = ele.activeWindow
+            
+            if (!("description" in ele)) {
+                //no description given, use summary
+                tempObj.description = ele.summary.value;
+            } else {
+                tempObj.description = ele.description.value;
+            }
+            return_array.append(tempObj);
         })
+        return return_array;
     }
 };
 

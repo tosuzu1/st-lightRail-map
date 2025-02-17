@@ -5,6 +5,8 @@ const path = require('path');
 require('dotenv').config();
 const app = express();
 app.use(express.json());
+let HOME_STATION_SOUTHBOUND = "40_990005"
+let HOME_STATION_NORTHBOUND = "40_990006"
 
 const PORT = process.env.PORT || 1234;
 const apiKey = process.env.API_KEY;
@@ -66,6 +68,28 @@ class Train {
         })
     }
 
+    get_schedule(json, station_id) {
+        let jsonObj = []
+        let serviceTime = json.data.list[0].serviceDate;
+        // get train schdule for station id from each trip
+        json.data.list.forEach((element) => {
+            jsonObj.push(element.schedule.stopTimes.filter(e => e.stopId === station_id)[0]);
+        })
+
+        // some are undefine because they pass the station already, filter them out
+        jsonObj =jsonObj.filter(e => e != undefined);
+
+        return jsonObj.map(ele => (ele.arrivalTime * 1000) + serviceTime)
+        // console.log(jsonObj.map(ele => ele.arrivalTime + serviceTime));
+        // jsonObj.map(ele => ele.arrivalTime + serTime).forEach(e => {
+        //     let newTime = new Date(e);
+            
+        //     console.log((newTime - now).toString());
+        //     console.log(`${newTime.getHours()}:${newTime.getMinutes()}`);
+        // })
+        // //console.log(jsonObj)
+    }
+
     get_orderStationList(json1, direction) {
         // return orderList of station, 0 = southbound, 1 = northbound
         let stops = json1.data.references.stops
@@ -85,6 +109,31 @@ class Train {
         }
         return dict
         //console.log(stops)
+    }
+
+    get_situations(json) {
+        let return_array = []
+        //console.log(json.data.references.situations)
+        json.data.references.situations.forEach(ele => {
+            let tempObj = {
+                activeWindow : {},
+                description : ""
+            }
+            //console.log(ele.description.value);
+            tempObj.activeWindow = ele.activeWindows[0]
+            
+            // maybe we just want summary
+            // if (!("description" in ele)) {
+            //     //no description given, use summary
+            //     tempObj.description = ele.summary.value;
+            // } else {
+            //     tempObj.description = ele.description.value;
+            // }
+            tempObj.description = ele.summary.value;
+            return_array.push(tempObj);
+        })
+        //console.log(return_array);
+        return return_array;
     }
 }
 
@@ -122,7 +171,7 @@ app.get("/getNorthStationsDict", (request, response) => {
 
 app.get("/getTrain", (request, response) => {
   
-    response.send(train_jsonData);
+    response.send(trainProcessor.get_data(train_jsonData));
  });
 
 app.get('/', function(req, res) {
@@ -141,20 +190,35 @@ app.get('/getLocalJson.js', function(req, res) {
     res.sendFile(path.join(__dirname, '/getLocalJson.js'));
 });
 
+app.get('/get_scheduleNorth', function(req, res) {
+    res.send(trainProcessor.get_schedule(train_jsonData, HOME_STATION_NORTHBOUND));
+});
+
+
+app.get('/get_scheduleSouth', function(req, res) {
+    res.send(trainProcessor.get_schedule(train_jsonData, HOME_STATION_SOUTHBOUND));
+});
+
+app.get('/getSchedule.js', function(req, res) {
+    res.sendFile(path.join(__dirname, '/getSchedule.js'));
+});
+
 app.get('/generateStations.js', function(req, res) {
     res.sendFile(path.join(__dirname, '//generateStations.js'));
+});
+
+app.get('/get_situations', function(req, res) {
+    res.send(trainProcessor.get_situations(train_jsonData));
+});
+
+app.get('/getSituations.js' , function(req, res) {
+    res.sendFile(path.join(__dirname, '/getSituations.js'));
 });
 console.log("running");
 
 const trip_url = `https://api.pugetsound.onebusaway.org/api/where/trips-for-route/40_100479.json?key=${apiKey}`;
 const stop_url = `https://api.pugetsound.onebusaway.org/api/where/stops-for-route/40_100479.json?key=${apiKey}`;
 
-function doThis() {
-    //console.log(jsonData);
-    console.log("hello");
-}
-
-setInterval(doThis, 15000);
 
 async function fetchData(url) {
     try {
@@ -169,9 +233,9 @@ async function fetchData(url) {
     }
 }
   
-//   //fetchData().then(data => console.log(data.data.list));
+//first time to fetch data
 fetchData(trip_url)
-  .then(data => train_jsonData = trainProcessor.get_data(data))
+  .then(data => train_jsonData = data)
   .catch(error => console.error(error));
 
 fetchData(stop_url)
@@ -179,3 +243,17 @@ fetchData(stop_url)
   .catch(error => console.error(error));
 const trainProcessor = new Train();
 // let trainData = trainProcessor.get_data(jsonData);
+
+
+function updateTraininfo(url) {
+    setInterval(async () => {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        train_jsonData = data
+    }, 15000);
+}
+
+updateTraininfo(trip_url);

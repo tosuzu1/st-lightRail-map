@@ -8,6 +8,8 @@
     <script src="./getTime.js" async></script>
     <script src="./getLocalJson.js" async></script>
     <script src="./generateStations.js" async></script>
+    <script src="./getSchedule.js" async></script>
+    <script src="./getSituations.js"async></script>
 </head>
 <body>
     <div class="header">
@@ -384,17 +386,17 @@
             </div>
         </div>
         <div class="bottom-display">
-            <div class="inbound-north">
-                <h2>Inbound northbounrd Train</h2>
+            <div class="inbound" id="inbound_north">
+                <h2> Northbound Train</h2>
                 <h3>0:07:39</h3>
             </div>
-            <div class="inbound-north">
-                <h2>Inbound Southbounrd Train</h2>
+            <div class="inbound" id="inbound_south">
+                <h2> Southbound Train</h2>
                 <h3>0:07:39</h3>
             </div>
-            <div class="Alerts-card">
-                <h3>Shoreline North/185th Station will have scheduled maintenance beginning Monday, Dec 9 through early January. The work will take place from 7 a.m. to 3 p.m. daily, detours and traffic control will be available for passenger access.</h3>
-                <h3>Entrance Closure at Mount Baker Station. The South entrance is not available due to a mechanical issue.</h3>
+            <div class="Alerts-card" id="Alert-card">
+                <!-- <h4>Shoreline North/185th Station will have scheduled maintenance beginning Monday, Dec 9 through early January. The work will take place from 7 a.m. to 3 p.m. daily, detours and traffic control will be available for passenger access.</h3>
+                <h4>Entrance Closure at Mount Baker Station. The South entrance is not available due to a mechanical issue.</h3> -->
             </div>
         </div>
     </div>
