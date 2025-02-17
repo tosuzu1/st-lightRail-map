@@ -1,10 +1,20 @@
 * {
     margin: 0px;
     padding: 0px;
+    background: hsl(231, 15%, 18%);
+    font-family: Arial, Helvetica, sans-serif;
+    color: hsl(60, 30%, 96%);
 }
 
 .header {
     padding : 8px 8px;
+    
+}
+
+.header,
+#timedisplay {
+    color: hsl(60, 30%, 96%);
+    background: hsl(232, 14%, 31%);
 }
 
 .north,.south{
@@ -20,13 +30,15 @@
     display: inline-block; /* Allows rotation */
     width: 20px;
     white-space: nowrap;
+    color: hsl(191, 97%, 77%);
   }
   
   .train-status {
-    border: 5px solid red;
+    border: 5px solid hsl(0, 0%, 10%);
     height: 30px;
     width: 30px;
-    background: blue;
+    background: hsl(0, 0%, 40%);
+    border-radius: 2px;
   }
 
 .content {
@@ -46,10 +58,11 @@
 
 .center-text {
     text-align: center;
+    margin-top: 20px;
 }
 
 .train-present {
-    background-color: green;
+    background-color: hsl(135, 94%, 65%);
 }
 
 .inbound,
@@ -60,4 +73,12 @@
 .alert-info {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.inbound h2 {
+    color: hsl(326, 100%, 74%);
+}
+
+.inbound h3 {
+    text-align: center;
 }

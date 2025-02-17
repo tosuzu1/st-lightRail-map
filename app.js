@@ -5,11 +5,16 @@ const path = require('path');
 require('dotenv').config();
 const app = express();
 app.use(express.json());
-let HOME_STATION_SOUTHBOUND = "40_990005"
-let HOME_STATION_NORTHBOUND = "40_990006"
 
-const PORT = process.env.PORT || 1234;
+// These are our station ID for our home station
+const HOME_STATION_SOUTHBOUND = "40_990005"
+const HOME_STATION_NORTHBOUND = "40_990006"
+
+// information about server
+const PORT = 1234;
 const apiKey = process.env.API_KEY;
+
+// store json data
 let train_jsonData, stop_jsonData
 
 class Train {
@@ -56,13 +61,10 @@ class Train {
 
         //console.log(data);
         return data;
-        // json.data.references.trips.forEach((element) => {
-        //     console.log(element.directionId);
-        // })
-
     }
 
     get_tripId(json) {
+        // return all possible tripID
         return json.data.list.map((element) => {
             return element.tripId
         })
@@ -79,15 +81,8 @@ class Train {
         // some are undefine because they pass the station already, filter them out
         jsonObj =jsonObj.filter(e => e != undefined);
 
+        // arrival time is in second, so we need to convert to millisecond for JS time
         return jsonObj.map(ele => (ele.arrivalTime * 1000) + serviceTime)
-        // console.log(jsonObj.map(ele => ele.arrivalTime + serviceTime));
-        // jsonObj.map(ele => ele.arrivalTime + serTime).forEach(e => {
-        //     let newTime = new Date(e);
-            
-        //     console.log((newTime - now).toString());
-        //     console.log(`${newTime.getHours()}:${newTime.getMinutes()}`);
-        // })
-        // //console.log(jsonObj)
     }
 
     get_orderStationList(json1, direction) {
@@ -99,6 +94,7 @@ class Train {
     }
 
     get_orderStationDict(json1, direction) {
+        // like list of station but return a index, useful to find the index we need to write to
         let stops = json1.data.references.stops
         let list = json1.data.entry.stopGroupings[0].stopGroups[direction].stopIds;
         let unfilterList = list.map(ele => stops.find(e => ele === e.id).name);
@@ -108,21 +104,19 @@ class Train {
             dict[filered_list[i]] = i * 2;
         }
         return dict
-        //console.log(stops)
     }
 
     get_situations(json) {
+        // return list of situations
         let return_array = []
-        //console.log(json.data.references.situations)
         json.data.references.situations.forEach(ele => {
             let tempObj = {
                 activeWindow : {},
                 description : ""
             }
-            //console.log(ele.description.value);
             tempObj.activeWindow = ele.activeWindows[0]
             
-            // maybe we just want summary
+            // maybe we just want summary as descript are very long
             // if (!("description" in ele)) {
             //     //no description given, use summary
             //     tempObj.description = ele.summary.value;
@@ -137,43 +131,36 @@ class Train {
     }
 }
 
+// all API
 app.listen(PORT, () => {
     console.log("Server Listening on PORT:", PORT);
-    
     });
 
-
-app.get("/status", (request, response) => {
-   const status = {
-      "Status": "Running"
-   };
-   
-   response.send(status);
-});
-
+// station dict
 app.get("/getNorthStationsDict", (request, response) => {
-    
     response.send(trainProcessor.get_orderStationDict(stop_jsonData, 1));
- });
+    });
 
- app.get("/getSouthStationsDict", (request, response) => {
+app.get("/getSouthStationsDict", (request, response) => {
     response.send(trainProcessor.get_orderStationDict(stop_jsonData, 0));
- });
+    });
 
- app.get("/getNorthStations", (request, response) => {
+ // station list
+app.get("/getNorthStations", (request, response) => {
     
     response.send(trainProcessor.get_orderStationList(stop_jsonData, 1));
- });
+    });
 
- app.get("/getSouthStations", (request, response) => {
+app.get("/getSouthStations", (request, response) => {
     response.send(trainProcessor.get_orderStationList(stop_jsonData, 0));
- });
+    });
 
+// return trains 
 app.get("/getTrain", (request, response) => {
-  
     response.send(trainProcessor.get_data(train_jsonData));
  });
 
+// server html
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/index.html'));
   });
@@ -190,15 +177,6 @@ app.get('/getLocalJson.js', function(req, res) {
     res.sendFile(path.join(__dirname, '/getLocalJson.js'));
 });
 
-app.get('/get_scheduleNorth', function(req, res) {
-    res.send(trainProcessor.get_schedule(train_jsonData, HOME_STATION_NORTHBOUND));
-});
-
-
-app.get('/get_scheduleSouth', function(req, res) {
-    res.send(trainProcessor.get_schedule(train_jsonData, HOME_STATION_SOUTHBOUND));
-});
-
 app.get('/getSchedule.js', function(req, res) {
     res.sendFile(path.join(__dirname, '/getSchedule.js'));
 });
@@ -207,19 +185,31 @@ app.get('/generateStations.js', function(req, res) {
     res.sendFile(path.join(__dirname, '//generateStations.js'));
 });
 
+app.get('/getSituations.js' , function(req, res) {
+    res.sendFile(path.join(__dirname, '/getSituations.js'));
+});
+
+// server train schedule
+app.get('/get_scheduleNorth', function(req, res) {
+    res.send(trainProcessor.get_schedule(train_jsonData, HOME_STATION_NORTHBOUND));
+});
+
+app.get('/get_scheduleSouth', function(req, res) {
+    res.send(trainProcessor.get_schedule(train_jsonData, HOME_STATION_SOUTHBOUND));
+});
+
+// serve situations
 app.get('/get_situations', function(req, res) {
     res.send(trainProcessor.get_situations(train_jsonData));
 });
 
-app.get('/getSituations.js' , function(req, res) {
-    res.sendFile(path.join(__dirname, '/getSituations.js'));
-});
+
 console.log("running");
 
 const trip_url = `https://api.pugetsound.onebusaway.org/api/where/trips-for-route/40_100479.json?key=${apiKey}`;
 const stop_url = `https://api.pugetsound.onebusaway.org/api/where/stops-for-route/40_100479.json?key=${apiKey}`;
 
-
+// first time fetching data
 async function fetchData(url) {
     try {
       const response = await fetch(url);
@@ -242,18 +232,31 @@ fetchData(stop_url)
   .then(data =>  stop_jsonData = data)
   .catch(error => console.error(error));
 const trainProcessor = new Train();
-// let trainData = trainProcessor.get_data(jsonData);
 
-
+// set interval every 15 for trip and minutes for station info
 function updateTraininfo(url) {
     setInterval(async () => {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            console.log(`HTTP error! status: ${response.status}`);
+            return 0;
         }
         const data = await response.json();
         train_jsonData = data
-    }, 15000);
+    }, 30000);
+}
+
+function updateStationinfo(url) {
+    setInterval(async () => {
+        const response = await fetch(url);
+        if (!response.ok) {
+            console.log(`HTTP error! status: ${response.status}`);
+            return 0;
+        }
+        const data = await response.json();
+        stop_jsonData = data
+    }, 60000);
 }
 
 updateTraininfo(trip_url);
+updateStationinfo(stop_url);

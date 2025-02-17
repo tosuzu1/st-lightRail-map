@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 let json = JSON.parse(fs.readFileSync('./example.json', 'utf8'));
 let json1 = JSON.parse(fs.readFileSync('./stopexample.json', 'utf8'));
 let HOME_STATION_SOUTHBOUND = "40_990005"
