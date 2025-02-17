@@ -4,7 +4,6 @@
   "description": "stLight map API",
   "main": "getLocalJson.js",
   "scripts": {
-    "test": "node /testExamples/test.js",
     "start": "node app.js"
   },
   "repository": {
