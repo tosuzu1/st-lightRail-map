@@ -7,7 +7,7 @@ Before you begin, you need to get a api key from sountrasit. https://www.soundtr
 Once you obtain a api key you then need to make a .env file in root and fill it with your API key. example line "API_KEY=YOUR_API_KEY_GOES_HERE".
 
 # to run
-1. install node
+1. install node (I used nvm, lts)
 2. npm install express
 3. npm start
 4. open browser to "localhost:1234"
