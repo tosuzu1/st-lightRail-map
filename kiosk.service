@@ -6,8 +6,7 @@ After=graphical.target
 [Service]
 Type=simple
 Environment="DISPLAY=:0"
-Environment="PATH=/home/felix/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games"
-ExecStart=/bin/bash /home/felix/Desktop/st-lightRail-map/kiosk.sh
+ExecStart=/bin/bash ~/st-lightRail-map/kiosh.sh
 Restart=on-abort
 User=felix
 

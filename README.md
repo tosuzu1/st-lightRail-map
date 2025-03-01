@@ -12,5 +12,13 @@ Once you obtain a api key you then need to make a .env file in root and fill it 
 3. npm start
 4. open browser to "localhost:1234"
 
+
 # example
 ![alt text](./screenShot/example.png)
+
+# testing pdoman
+1. sudo apt-get upgrade
+2. sudo apt-get upgrade
+3. sudo apt install docker.io
+4. docker build -t st-lightrail-map .
+5. sudo docker run -d -p 1234:1234 st-light-rail 
