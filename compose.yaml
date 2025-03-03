@@ -1,0 +1,5 @@
+services:
+  nodejs-stlink:
+    build: .
+    ports:
+      - "1234:1234"
